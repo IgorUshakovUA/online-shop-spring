@@ -12,9 +12,10 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="com.study.shop.web.controller"/>
+    <context:component-scan base-package="com.study.shop.web.filter"/>
 
     <mvc:annotation-driven/>
-
+<!--
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/" />
@@ -27,7 +28,7 @@
             <bean class="com.study.shop.web.controller.AdminAuthInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>
-
+-->
 
     <!-- SERVICES -->
     <bean id="productService" class="com.study.shop.service.DefaultProductService">
@@ -57,4 +58,7 @@
     <bean id="securityService" class="com.study.shop.security.SecurityService">
         <property name="defaultUserService" ref="defaultUserService" />
     </bean>
+
+    <bean id="beanUtils" class="com.study.shop.util.BeanUtil"/>
+
 </beans>
