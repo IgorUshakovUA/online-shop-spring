@@ -1,9 +1,13 @@
-package com.study.shop.web.filter;
+package com.study.shop.web.controller;
 
 import com.study.shop.entity.User;
 import com.study.shop.security.entity.UserRole;
 
-public class AdminSecurityFilter extends AbstractSecurityFilter {
+public class AdminAuthInterceptor extends AbstractAuthInterceptor {
+
+    public AdminAuthInterceptor() {
+
+    }
 
     @Override
     protected boolean hasRole(User user) {
